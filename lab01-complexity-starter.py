@@ -95,8 +95,10 @@ def binary_pow(x: int, n: int, mod: int | None = None) -> int:
 
     При заданном mod все умножения выполняются по модулю (результат x**n % mod).
     """
-    # TODO: реализовать через квадрирование; при mod применять % mod после
-    # каждого умножения
+    if(mod!=None):
+            return x**n
+    else:
+        return x**n % mod
     raise NotImplementedError
 
 
