@@ -71,7 +71,11 @@ def array_sum(a: list[int]) -> int:
 
 def array_max(a: list[int]) -> int:
     """Максимум массива (массив непуст). Ожидаемая сложность: TODO."""
-    # TODO: реализовать циклом
+    maximum = 0
+    for i in range(len(a)):
+        if(maximum<a[i]):
+            maximum = a[i]
+    return maximum
     raise NotImplementedError
 
 
