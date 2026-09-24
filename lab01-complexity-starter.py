@@ -70,7 +70,7 @@ def array_sum(a: list[int]) -> int:
 
 def array_max(a: list[int]) -> int:
     """Максимум массива (массив непуст). Ожидаемая сложность: TODO."""
-    maximum = 0
+    maximum = a[0]
     for i in range(len(a)):
         if(maximum<a[i]):
             maximum = a[i]
@@ -94,10 +94,18 @@ def binary_pow(x: int, n: int, mod: int | None = None) -> int:
 
     При заданном mod все умножения выполняются по модулю (результат x**n % mod).
     """
-    if(mod!=None):
-            return x**n
-    else:
-        return x**n % mod
+    result = 1
+    base = x
+    while n > 0:
+        if n & 1:
+            result *= base
+            if mod is not None:
+                result %= mod
+        base *= base
+        if mod is not None:
+            base %= mod
+        n >>= 1
+    return result
     raise NotImplementedError
 
 
