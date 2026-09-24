@@ -64,7 +64,6 @@ def array_sum(a: list[int]) -> int:
     summa=0
     for i in range(len(a)):
         summa+=a[i]
-    print(summa)
     return summa
     raise NotImplementedError
 
